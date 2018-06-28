@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import be.vdab.services.DocentServices;
+import be.vdab.services.DocentService;
 import be.vdab.util.StringUtils;
 
 /**
@@ -19,7 +19,7 @@ import be.vdab.util.StringUtils;
 public class ZoekenServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String VIEW = "/WEB-INF/JSP/docenten/zoeken.jsp";
-	private final transient DocentServices docentServices = new DocentServices();
+	private final transient DocentService docentServices = new DocentService();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id = request.getParameter("id");

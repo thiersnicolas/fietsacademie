@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import be.vdab.entities.Docent;
 import be.vdab.enums.Geslacht;
-import be.vdab.services.DocentServices;
+import be.vdab.services.DocentService;
 import be.vdab.util.StringUtils;
 
 /**
@@ -24,7 +24,7 @@ public class ToevoegenServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String VIEW = "/WEB-INF/JSP/docenten/toevoegen.jsp";
 	private static final String REDIRECT_URL = "%s/docenten/zoeken.htm?id=%d";
-	private final transient DocentServices docentServices = new DocentServices();
+	private final transient DocentService docentServices = new DocentService();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

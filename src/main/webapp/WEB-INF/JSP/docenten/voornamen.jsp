@@ -10,8 +10,13 @@
 	<v:menu />
 	<h1>Docenten voornamen</h1>
 	<ul class="zonderbolletjes">
-		<c:forEach var="voornaam" items="${voornamen}">
-			<li style="font-size:${voornaam.length() mod 3+1}em">${voornaam}</li>
+		<c:forEach var="voornaamEnId" items="${voornamen}">
+			<c:url value='/docenten/zoeken.htm' var='docentURL'>
+				<c:param name="id" value="${voornaamEnId.id}"/>
+			</c:url>
+			<li style="font-size:${voornaamEnId.voornaam.length() mod 3+1}em">
+				<a href="${docentURL}">${voornaamEnId.voornaam}</a>
+			</li>
 		</c:forEach>
 	</ul>
 </body>

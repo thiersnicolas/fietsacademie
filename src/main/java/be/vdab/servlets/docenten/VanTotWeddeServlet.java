@@ -28,7 +28,9 @@ public class VanTotWeddeServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		if (request.getQueryString() != null) {
+		if (request.getQueryString() == null) {
+			request.setAttribute("tot", docentService.findMaxWedde());
+		} else {
 			Map<String, String> fouten = new HashMap<>();
 			String van = request.getParameter("van");
 			if (!StringUtils.isBigDecimal(van)) {
@@ -45,10 +47,6 @@ public class VanTotWeddeServlet extends HttpServlet {
 				request.setAttribute("aantalRijen", AANTAL_RIJEN);
 				List<Docent> docenten = docentService.findByWeddeBetween(new BigDecimal(van), new BigDecimal(tot),
 						vanafRij, AANTAL_RIJEN + 1);
-				System.out.println(docenten.isEmpty());
-				for (Docent docent: docenten) {
-					System.out.println(docent.getId());
-				}
 				if (docenten.size() <= AANTAL_RIJEN) {
 					request.setAttribute("laatstePagina", true);
 				} else {

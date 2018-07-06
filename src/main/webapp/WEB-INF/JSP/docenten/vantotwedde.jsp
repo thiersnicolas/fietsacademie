@@ -19,7 +19,7 @@ td:first-child, td:last-child {
 		<label>Van:<span>${fouten.van}</span> <input name="van"
 			value="${param.van}" type="number" min="0" step="0.01" required
 			autofocus></label> <label>Tot:<span>${fouten.tot}</span> <input
-			name="tot" value="${param.tot}" type="number" min="0" step="0.01"
+			name="tot" value="${empty tot ? param.tot : tot}" type="number" min="0" step="0.01"
 			required></label> <input type="submit" value="zoeken">
 	</form>
 	<c:if test="${not empty param and empty fouten and empty docenten}">Geen docenten gevonden</c:if>

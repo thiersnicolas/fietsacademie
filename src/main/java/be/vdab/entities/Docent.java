@@ -16,6 +16,7 @@ import be.vdab.enums.Geslacht;
 
 @Entity
 @Table(name = "docenten")
+
 public class Docent implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id

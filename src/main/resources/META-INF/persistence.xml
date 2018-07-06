@@ -7,6 +7,9 @@ http://www.oracle.com/webfolder/technetwork/jsc/xml/ns/persistence/persistence_2
 	<persistence-unit name='fietsacademy'>
 		<non-jta-data-source>java:/comp/env/jdbc/fietsacademy</non-jta-data-source>
 		<class>be.vdab.entities.Docent</class>
+		<class>be.vdab.entities.Cursus</class>
+		<class>be.vdab.entities.IndividueleCursus</class>
+		<class>be.vdab.entities.GroepsCursus</class>
 		<properties>
 			<property name='hibernate.show_sql' value='true' />
 			<property name='hibernate.format_sql' value='true' />

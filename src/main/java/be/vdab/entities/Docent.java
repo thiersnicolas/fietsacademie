@@ -13,10 +13,12 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import be.vdab.enums.Geslacht;
@@ -39,6 +41,9 @@ public class Docent implements Serializable {
 	@CollectionTable(name="docentenbijnamen", joinColumns = @JoinColumn(name="docentid"))
 	@Column(name="bijnaam")
 	private Set<String> bijnamen;
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@JoinColumn(name="campusid")
+	private Campus campus;
 	
 	public Docent(String voornaam, String familienaam, BigDecimal wedde, Geslacht geslacht, long rijksRegisterNr) {
 		setVoornaam(voornaam);
@@ -51,6 +56,20 @@ public class Docent implements Serializable {
 	
 	protected Docent() {}
 	
+	public Campus getCampus() {
+		return campus;
+	}
+
+	public void setCampus(Campus campus) {
+		if (this.campus != null && this.campus.getDocenten().contains(this)) {
+			this.campus.remove(this);
+		}
+		this.campus = campus;
+		if (campus != null && campus.getDocenten().contains(this)) {
+			campus.add(this);
+		}
+	}
+
 	public void removeBijnaam(String bijnaam) {
 		bijnamen.remove(bijnaam);
 	}
@@ -151,6 +170,5 @@ public class Docent implements Serializable {
 		BigDecimal factor = BigDecimal.ONE.add(percentage.divide(BigDecimal.valueOf(100)));
 		wedde = wedde.multiply(factor).setScale(2, RoundingMode.HALF_UP);
 	}
-	
-	
+
 }

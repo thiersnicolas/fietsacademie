@@ -3,6 +3,6 @@
 	<Resource name='jdbc/fietsacademy' type='javax.sql.DataSource'
 		username='cursist' password='cursist'
 		driverClassName='com.mysql.jdbc.Driver'
-		url='jdbc:mysql://localhost/fietsacademy?useSSL=false'
+		url='jdbc:mysql://localhost/fietsacademy?useSSL=false&amp;useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC'
 		closeMethod='close' />
 </Context>

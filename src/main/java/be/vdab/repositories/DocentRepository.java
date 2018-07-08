@@ -50,4 +50,6 @@ public class DocentRepository extends AbstractRepository {
 		.setParameter("factor", factor)
 		.executeUpdate();
 	}
+	
+	
 }

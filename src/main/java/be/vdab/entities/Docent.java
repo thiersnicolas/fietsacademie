@@ -3,6 +3,7 @@ package be.vdab.entities;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.sql.Timestamp;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -26,6 +27,7 @@ import javax.persistence.NamedAttributeNode;
 import javax.persistence.NamedEntityGraph;
 import javax.persistence.NamedEntityGraphs;
 import javax.persistence.Table;
+import javax.persistence.Version;
 
 import be.vdab.enums.Geslacht;
 
@@ -68,6 +70,8 @@ public class Docent implements Serializable {
 			joinColumns = @JoinColumn(name="docentid"),
 			inverseJoinColumns = @JoinColumn(name="verantwoordelijkheidid"))
 	private Set<Verantwoordelijkheid> verantwoordelijkheden = new LinkedHashSet<>();
+	@Version
+	private Timestamp versie;
 	
 	public Docent(String voornaam, String familienaam, BigDecimal wedde, Geslacht geslacht, long rijksRegisterNr) {
 		setVoornaam(voornaam);
@@ -211,7 +215,7 @@ public class Docent implements Serializable {
 		this.rijksRegisterNr = rijksRegisterNr;
 	}
 	
-	public void opslag(long id, BigDecimal percentage) {
+	public void opslag(BigDecimal percentage) {
 		BigDecimal factor = BigDecimal.ONE.add(percentage.divide(BigDecimal.valueOf(100)));
 		wedde = wedde.multiply(factor).setScale(2, RoundingMode.HALF_UP);
 	}

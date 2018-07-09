@@ -41,4 +41,11 @@ http://xmlns.jcp.org/xml/ns/persistence/orm_2_1.xsd"
   </query>
 </named-query> 
 
+<named-query name="Docent.findByRijksregisterNr">
+	<query>
+		select d from Docent d 
+		where d.rijksRegisterNr = :rijksregisternr
+	</query>
+</named-query>
+
 </entity-mappings>

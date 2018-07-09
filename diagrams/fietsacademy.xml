@@ -2,9 +2,9 @@
 	<entity>
 		<entity-name>be.vdab.entities.Docent</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>246</entity-height>
-		<entity-X-Coordinate>18</entity-X-Coordinate>
-		<entity-Y-Coordinate>261</entity-Y-Coordinate>
+		<entity-height>266</entity-height>
+		<entity-X-Coordinate>50</entity-X-Coordinate>
+		<entity-Y-Coordinate>157</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -13,7 +13,7 @@
 	<entity>
 		<entity-name>be.vdab.entities.Campus</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>148</entity-height>
+		<entity-height>186</entity-height>
 		<entity-X-Coordinate>240</entity-X-Coordinate>
 		<entity-Y-Coordinate>310</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
@@ -33,11 +33,11 @@
 	</entity>
 
 	<entity>
-		<entity-name>be.vdab.valueobjects.TelefoonNr</entity-name>
+		<entity-name>be.vdab.entities.GroepsCursus</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>110</entity-height>
+		<entity-height>90</entity-height>
 		<entity-X-Coordinate>510</entity-X-Coordinate>
-		<entity-Y-Coordinate>277</entity-Y-Coordinate>
+		<entity-Y-Coordinate>130</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -55,11 +55,11 @@
 	</entity>
 
 	<entity>
-		<entity-name>be.vdab.entities.GroepsCursus</entity-name>
+		<entity-name>be.vdab.valueobjects.TelefoonNr</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>90</entity-height>
+		<entity-height>110</entity-height>
 		<entity-X-Coordinate>510</entity-X-Coordinate>
-		<entity-Y-Coordinate>130</entity-Y-Coordinate>
+		<entity-Y-Coordinate>277</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -71,6 +71,17 @@
 		<entity-height>70</entity-height>
 		<entity-X-Coordinate>510</entity-X-Coordinate>
 		<entity-Y-Coordinate>50</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
+		<entity-name>be.vdab.entities.Verantwoordelijkheid</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>146</entity-height>
+		<entity-X-Coordinate>50</entity-X-Coordinate>
+		<entity-Y-Coordinate>529</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>

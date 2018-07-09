@@ -30,6 +30,7 @@ td:first-child, td:last-child {
 					<th>Nummer</th>
 					<th>Naam</th>
 					<th>Wedde>
+					<th>Campus</th>
 			</thead>
 			<tbody>
 				<c:forEach items="${docenten}" var="docent">
@@ -38,6 +39,8 @@ td:first-child, td:last-child {
 						<td>${docent.naam}</td>
 						<td><fmt:formatNumber value="${docent.wedde}"
 								minFractionDigits="2" maxFractionDigits="2" /></td>
+						<td>${docent.campus.naam}</td>
+					</tr>
 				</c:forEach>
 			</tbody>
 		</table>

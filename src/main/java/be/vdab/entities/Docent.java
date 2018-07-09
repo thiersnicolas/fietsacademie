@@ -22,6 +22,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedAttributeNode;
+import javax.persistence.NamedEntityGraph;
+import javax.persistence.NamedEntityGraphs;
 import javax.persistence.Table;
 
 import be.vdab.enums.Geslacht;
@@ -29,8 +32,20 @@ import be.vdab.enums.Geslacht;
 @Entity
 @Table(name = "docenten")
 
+@NamedEntityGraphs({
+	@NamedEntityGraph(name=Docent.MET_CAMPUS, attributeNodes = @NamedAttributeNode("campus")),
+	@NamedEntityGraph(name=Docent.MET_CAMPUS_VERANTWOORDELIJKHEDEN, 
+		attributeNodes = {@NamedAttributeNode("campus"), @NamedAttributeNode("verantwoordelijkheden")}),
+	@NamedEntityGraph(name=Docent.MET_CAMPUS_MANAGER, attributeNodes = {@NamedAttributeNode("campus"), 
+		@NamedAttributeNode("manager")})
+	})
+
 public class Docent implements Serializable {
 	private static final long serialVersionUID = 1L;
+	public static final String MET_CAMPUS = "Docent.metCampus";
+	public static final String MET_CAMPUS_VERANTWOORDELIJKHEDEN = "Docent.metCampus";
+	public static final String MET_CAMPUS_MANAGER = "Docent.metCampus";
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
